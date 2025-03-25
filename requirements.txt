@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+streamlit
+langchain
+langchain_community
+transformers
+torch
+requests
+scikit-learn
+accelerate>=0.26.0
