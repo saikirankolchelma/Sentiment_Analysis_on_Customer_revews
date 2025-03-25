@@ -9,59 +9,59 @@ The application trains a language model on a review dataset, saves the trained m
 Components 🧩
 Data Processing (data_processing.py):
 
-Loads and preprocesses the review dataset (train.ft.txt.bz2). 📂
-
-Stores predictions in an SQLite database. 💾
+  Loads and preprocesses the review dataset (train.ft.txt.bz2). 📂
+  
+  Stores predictions in an SQLite database. 💾
 
 Model (model.py):
 
-Fine-tunes DistilBERT for sentiment classification (positive, negative, neutral). 🤖
-
-Saves/loads the trained model for efficiency. 💪
+  Fine-tunes DistilBERT for sentiment classification (positive, negative, neutral). 🤖
+  
+  Saves/loads the trained model for efficiency. 💪
 
 Backend (api.py):
 
-FastAPI server exposing /predict/ and /reviews/ endpoints. 🌐
-
-Handles sentiment predictions and database interactions. 🔧
+  FastAPI server exposing /predict/ and /reviews/ endpoints. 🌐
+  
+  Handles sentiment predictions and database interactions. 🔧
 
 Frontend (frontend.py):
 
-Streamlit interface for user input and result display. 🖥️✨
+  Streamlit interface for user input and result display. 🖥️✨
 
 Utilities (utils.py):
 
-Logging setup for debugging and monitoring. 📊
+  Logging setup for debugging and monitoring. 📊
 
 Main Script (main.py):
 
-Orchestrates training (if needed) and server startup. ⚙️
+  Orchestrates training (if needed) and server startup. ⚙️
 
 Workflow 🔄
 
 Startup:
 
-main.py checks for a trained model. If absent, it trains DistilBERT on the dataset and saves it. 🧠
+  main.py checks for a trained model. If absent, it trains DistilBERT on the dataset and saves it. 🧠
 
-Launches FastAPI , then Streamlit . 🚀
+  Launches FastAPI , then Streamlit . 🚀
 
 Prediction:
 
-User enters a review in Streamlit . ✍️
-
-Streamlit sends a POST request to FastAPI’s /predict/. 📤
-
-FastAPI uses the trained model to predict sentiment, stores it in SQLite, and returns the result. 🔮
+  User enters a review in Streamlit . ✍️
+  
+  Streamlit sends a POST request to FastAPI’s /predict/. 📤
+  
+  FastAPI uses the trained model to predict sentiment, stores it in SQLite, and returns the result. 🔮
 
 Review History:
 
-FastAPI’s /reviews/ endpoint fetches stored reviews from SQLite for display. 📜
+  FastAPI’s /reviews/ endpoint fetches stored reviews from SQLite for display. 📜
 
 Diagram 📊
 
-[User] → [Streamlit Frontend] → [FastAPI Backend] → [DistilBERT Model]
-                            ↓                  ↑
-                       [SQLite DB] ←-----------
+    [User] → [Streamlit Frontend] → [FastAPI Backend] → [DistilBERT Model]
+                                ↓                  ↑
+                           [SQLite DB] ←-----------
 
                        
 📋 Requirements 📋
