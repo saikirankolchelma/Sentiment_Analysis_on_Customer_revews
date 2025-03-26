@@ -1,12 +1,21 @@
 🚀 Customer Sentiment Analysis Application 🚀
+
 This project implements a Customer Sentiment Analysis application as per the task:
+
 "Train an LLM on product reviews (from Amazon or Kaggle datasets) to classify positive, negative, and neutral sentiments."
 
 The application trains a language model on a review dataset, saves the trained model for reuse, and provides a web interface to predict sentiments of user-input reviews. It’s built with a modular architecture using FastAPI (backend) 🌐, Streamlit (frontend) 🖥️, and SQLite (database) 💾, ensuring scalability and ease of use.
 
+Video Demonstration 🎥
+
+For a better understanding of how the Sentiment Analysis Application works, check out the video demonstration below:
+
+link: https://drive.google.com/file/d/1nSpmISxIrPFJl9xWuRXxL4HORuvLJR-r/view?usp=drivesdk
+
 🏗️ Architecture Overview 🏗️
 
 Components 🧩
+
 Data Processing (data_processing.py):
 
   Loads and preprocesses the review dataset (train.ft.txt.bz2). 📂
@@ -102,11 +111,17 @@ LLM: DistilBERT 🧠
 
 Why DistilBERT?
 
-Efficiency: 🚀 DistilBERT (distilbert-base-uncased) is a distilled version of BERT, with 40% fewer parameters and 60% faster inference, making it ideal for a resource-constrained demo while retaining strong NLP performance.
+Efficiency:
 
-Pre-trained Knowledge: Trained on a large corpus, it understands general English, which is fine-tuned for sentiment analysis on product reviews. 📚
+🚀 DistilBERT (distilbert-base-uncased) is a distilled version of BERT, with 40% fewer parameters and 60% faster inference, making it ideal for a resource-constrained demo while retaining strong NLP performance.
 
-Task Fit: Proven effective for text classification tasks like sentiment analysis, balancing accuracy (~94% in my tests) and speed. ⚡
+Pre-trained Knowledge:
+
+Trained on a large corpus, it understands general English, which is fine-tuned for sentiment analysis on product reviews. 📚
+
+Task Fit:
+
+Proven effective for text classification tasks like sentiment analysis, balancing accuracy (~94% in my tests) and speed. ⚡
 
 Alternatives Considered:
 
